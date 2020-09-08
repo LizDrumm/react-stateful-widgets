@@ -29,6 +29,10 @@ export default function Programmers() {
   // The programmers list on the one hand, and the id of the featured programmer on the other.
   const [ programmers, setProgrammers ] = useState(listOfAwesome);
   const [ programmerId, setProgrammerId ] = useState(null);
+
+
+
+
   const getNameOfFeatured = () => {
     // Leave this for last!
     // This is NOT an event handler but a helper function. See its usage inside the JSX.
@@ -38,11 +42,13 @@ export default function Programmers() {
     if (programmerId === null) {
       return null
     } else {
+      //go inside of the programmer's array and find the id that matches the id of the button you click
      const featuredProgrammer = programmers.find(programmer => {
         return programmerId === programmer.id
       })
       return featuredProgrammer.name
     }
+    //featuredProgrammer returns the name that shows up in gold at the bottom 
   };
 
 
