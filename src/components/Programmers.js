@@ -39,15 +39,15 @@ export default function Programmers() {
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
-    if (programmerId === null) {
-      return null
-    } else {
+    // if (programmerId === null) {
+    //   return null
+    // } else {
       //go inside of the programmer's array and find the id that matches the id of the button you click
      const featuredProgrammer = programmers.find(programmer => {
         return programmerId === programmer.id
       })
       return featuredProgrammer.name
-    }
+    
     //featuredProgrammer returns the name that shows up in gold at the bottom 
   };
 
@@ -79,7 +79,7 @@ export default function Programmers() {
           // Ternaries are fantastic to render "one thing or the other" depending on the "truthiness" of something.
           // Pseudo-code: if the currently featured id is truthy render text 1, otherwise render text 2.
           // Replace the hard-coded false with the correct variable.
-          programmerId !== null
+          programmerId //!== null
             ? <div style={style}>`🎉 Let's celebrate {getNameOfFeatured()}! 🥳` </div>
             : <div style={style}>Pick an awesome programmer</div>
         }
